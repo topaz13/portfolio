@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    width: 128px;
+    height: 128px;
+    text-align: center;
+    background-image: url(../../images/game/flame2.png);
+    font-size: 80px;
+    font-family: 'Cookie', cursive;
+    padding: 0;
+}
+
+#title {
+    font-size: 100px;
+    padding: 0 0 0 0;
+    text-align: center;
+    /* height: 100px; */
+    font-family: 'Cookie', cursive;
+}
+
+/*押す場所の色変更*/
+td:hover {
+    background-color: blanchedalmond;
+}
+
+.main {
+    width: 550px;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+#gameboard {
+    align-items: center;
+    margin: 0px 19px 0px 19px;
+}
