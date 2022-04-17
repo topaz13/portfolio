@@ -10,15 +10,14 @@ window.addEventListener('resize', onResize);
 var renderer;
 var camera;
 var scene;
+var loader;
+var rotateList = [];
 // -----------------
+var tex;
 
 function onResize() {
     // サイズを取得
-    // const width = window.innerWidth;
-    // const width = document.body.clientWidth;
-    // const width = screen.width;
     const width = document.documentElement.clientWidth;
-
     const height = window.innerHeight;
 
     // レンダラーのサイズを調整する
@@ -39,9 +38,13 @@ function onResize() {
 
 var objlist = [];
 
+
 var CreateObject = () => {
-    const geometry2 = new THREE.BoxGeometry(220, 200, 200);
-    const material2 = new THREE.MeshNormalMaterial();
+    const geometry2 = new THREE.BoxGeometry(400, 100, 200);
+    // const material2 = new THREE.MeshNormalMaterial();
+    const material2 = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+
+    // material2.map = tex;
     const box2 = new THREE.Mesh(geometry2, material2);
     // box2.position = new THREE.Vector3(0, 1000, 0);
     box2.position.x = -1000;
@@ -71,14 +74,14 @@ var mainLoop = () => {
         CreateObject();
     }
 
-    // p.rotation.y += 0.01;
     if (p != null)
         p.rotation.x += 0.01
-    // p.rotation.x += 0.01;
+
+    rotateList.forEach(element => {
+        element.rotation.x += 0.01;
+        element.rotation.y += 0.01;
+    });
 }
-
-
-
 
 
 const drawLine = () => {
@@ -123,8 +126,29 @@ const createDodecahedronGeometry = () => {
 }
 
 
+var CreateEarth = () => {
+    // 球体を作成
+    const geometry = new THREE.SphereGeometry(300, 30, 30);
+    // 画像を読み込む
+    const loader = new THREE.TextureLoader();
+    const texture = loader.load("../../images/game/earthmap1k.jpg")
+    // マテリアルにテクスチャーを設定
+    const material = new THREE.MeshStandardMaterial({
+        map: texture
+    });
+    // メッシュを作成
+    const mesh = new THREE.Mesh(geometry, material);
+    // 3D空間にメッシュを追加
+    scene.add(mesh);
+    // 平行光源
+    const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+    directionalLight.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight);
+    rotateList.push(mesh)
+}
 
-
+var mm;
 
 function init() {
 
@@ -137,7 +161,9 @@ function init() {
     console.log("create renderer")
     // レンダラーを作成
     renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('#myCanvas')
+        canvas: document.querySelector('#myCanvas'),
+        alpha: true, //追加 背景を透明にする
+        antialias: true, //追加 アンチエイリアス
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
@@ -149,34 +175,54 @@ function init() {
     camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, +1000);
 
-    // 箱を作成
-    // const geometry = new THREE.BoxGeometry(400, 400, 400);
-    // const material = new THREE.MeshNormalMaterial();
-    // const box = new THREE.Mesh(geometry, material);
-    // scene.add(box);
-
     const geometry2 = new THREE.BoxGeometry(220, 100, 400);
     const material2 = new THREE.MeshNormalMaterial();
     const box2 = new THREE.Mesh(geometry2, material2);
-    box2.position = new THREE.Vector3(1000, 1000, 0);
+    box2.position = new THREE.Vector3(1000, 10, 0);
     objlist.push(box2);
     console.log("hoge")
     scene.add(box2);
 
+    // 3Dオブジェクトを作る
+    loader = new THREE.TextureLoader();
+    const texture01 = loader.load("../../test/img/img_01.jpg");
+    const textures = [
+        texture01,
+    ]
+    const geometry = new THREE.DodecahedronGeometry(300, 0); // DodecahedronGeometry 正十二面体（半径、詳細）
+    const material = new THREE.MeshPhongMaterial();
+    if (textures != null)
+        material.map = textures[0];
+    mm = new THREE.Mesh(geometry, material);
+    // scene.add(mm);
+
+    // tex = loader.load("../../images/logo.png");
+    tex = loader.load("../../test/img/saikoro_image.png");
+
+
+
+    const geome = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+    const mate = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const torusKnot = new THREE.Mesh(geome, mate);
+    torusKnot.scale.x = 10;
+    torusKnot.scale.y = 10;
+    torusKnot.scale.z = 10;
+    scene.add(torusKnot);
+    rotateList.push(torusKnot);
+    // 
     tick();
     onResize();
 
     // 追加
-    drawLine();
-    createDodecahedronGeometry();
+    // drawLine();
+    // createDodecahedronGeometry();
+    CreateEarth();
     //
 
     // 毎フレーム時に実行されるループイベントです
     function tick() {
         renderer.render(scene, camera); // レンダリング
         mainLoop();
-        // p.position.x += 3;
         requestAnimationFrame(tick);
-        // p.rotation.x += 0.1;
     }
 }

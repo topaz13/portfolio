@@ -14,14 +14,11 @@
 
     <link rel="stylesheet" href="css/works.css">
     <style>
-        .work_title {
-            background-color: yellowgreen;
-        }
 
-        .work_title:hover {
-            background-color: blue;
-        }
     </style>
+
+
+    <link rel="stylesheet" href="./test/css/bg_particle.css">
 </head>
 
 <body>
@@ -56,20 +53,28 @@
 
 
     <main>
+        <!-- ここ -->
+        <!-- particles.js container -->
+        <div id="particles-js"></div> <!-- stats - count particles -->
+        <div class="count-particles"> <span class="js-count-particles">--</span> particles </div>
+
+
         <!-- <div class="px-3 py-5 bg-img"> -->
         <div class="px-3 py-10">
-            aaa
             <div class="container">
-                <h1><i class="bi bi-camera2"></i>WORKS</h1>
+                <h1>WORKS</h1>
                 <p>topazの制作物をご覧ください</p>
             </div>
         </div>
+
+
+
 
         <section id="work_game">
             <h1 class="work_title" style="text-align: center;">GAME</h1>
             <div class="container mt-4">
                 <div class="row gy-3">
-                    <div class="card col-lg-3 col-sm-6 work_content">
+                    <div class="card col-lg-3 col-sm-4 work_content">
 
                         <img src="./images/PPPTitle.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
@@ -78,36 +83,37 @@
                             <a href="https://trap.jp/post/730/" target="_blank">ここからダウンロードできるよ</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6 work_content">
+                    <div class="card col-lg-3 col-sm-4 work_content">
 
                         <img src="./images/kahun.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">花粉バスター</p>
                             2021年3月:サイバーエージェントさんのハッカソンで作ったゲーム<br>
-                            <a href="https://nepaipehu.github.io/Game/">ここから遊べるよ</a>
+                            <a href="https://nepaipehu.github.io/Game/" target="_blank">ここから遊べるよ</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6">
+                    <div class="card col-lg-3 col-sm-4">
 
                         <img src="./images/japari.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">ジャパリパークオンライン</p>
                             サークルでチーム制作したゲーム<br>
-                            <a href="https://trap.jp/post/1322/">ここに詳細が！？</a>
+                            <a href="https://trap.jp/post/1322/" target="_blank">ここに詳細が！？</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6">
+                    <div class="card col-lg-3 col-sm-4">
                         <img src="./images/SwitchAndDash.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">SwitchAndDash</p>
                             お友達と作ったスマホのゲーム<br>
-                            <a
-                                href="https://apps.apple.com/jp/app/switchanddash/id1604222793?platform=iphone">IOSですか？</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.LisCoara.SwitchAndDash">Google
+                            <a href="https://apps.apple.com/jp/app/switchanddash/id1604222793?platform=iphone"
+                                target="_blank">IOSですか？</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.LisCoara.SwitchAndDash"
+                                target="_blank">Google
                                 Playですか？？</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6">
+                    <div class="card col-lg-3 col-sm-4">
                         <img src="./images/star.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">StarCollection</p>
@@ -115,7 +121,7 @@
                             <a href="https://unityroom.com/games/starcollection" target="_blank">ここに置いてある．</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6 work_content">
+                    <div class="card col-lg-3 col-sm-4 work_content">
                         <img src="./images/chuou.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">中央値！</p>
@@ -123,13 +129,38 @@
                             <a href="https://unityroom.com/games/chuuouchi" target="_blank">遊びたい？？</a>
                         </div>
                     </div>
-                    <div class="card col-lg-3 col-sm-6">
+                    <div class="card col-lg-3 col-sm-4">
                         <img src="./images/yajilin.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">やじりんパーク</p>
                             やじりんをアプリにしてみました．<br>
                             <a href="https://apps.apple.com/jp/app/%E3%82%84%E3%81%98%E3%82%8A%E3%82%93%E3%83%91%E3%83%BC%E3%82%AF-%E3%83%A4%E3%82%B8%E3%83%AA%E3%83%B3-%E3%83%91%E3%82%BA%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id1616811772?uo=4"
                                 target="_blank">こちらでし．．</a>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-4">
+                        <img src="./images/OneCommandOneAction.png" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">One Command One Action</p>
+                            Trijam165で3時間で作成した作品!!!!!<br>
+                            <a href="https://topaz13.itch.io/onecommandoneaction" target="_blank">こんな所に置いてある．</a>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-4">
+                        <img src="./images/DayNightSswitch.png" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">DayNightSwitch</p>
+                            2022/4/10 : Trijam164で3時間で作成した作品!!!!!<br>
+                            <a href="https://topaz13.itch.io/daynightswitch" target="_blank">こんな所に置いてある．</a>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-4">
+                        <img src="./images/BlockCount.png" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">BlockCount</p>
+                            サークルのゲームジャムで個人開発したゲーム<br>
+                            お題は「超スピード」，「勘」,「trial」.<br>
+                            <a href="https://unityroom.com/games/blockcount" target="_blank">見てみるかい？？？</a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +171,7 @@
             <h1 class="work_title" style="text-align: center;">OTHER</h1>
             <div class="container mt-4">
                 <div class="row gy-3">
-                    <div class="card col-lg-3 col-sm-6">
+                    <div class="card col-lg-3 col-sm-4">
 
                         <img src="./images/logo.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
@@ -154,15 +185,24 @@
             </div>
         </section>
     </main>
-    <footer class="py-4 mt-5 bg-dark text-center">
-        <div class="container">
-            <p class="text-white-50 small">&copy; 2022 topaz</p>
-        </div>
-    </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
     <script src="./js/works.js"></script>
+
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+    <script src="./test/js/bg_particle.js"></script>
+
+    <footer class="py-4 mt-5 bg-dark text-center work_footer">
+        <div class="container">
+            <p class="text-white-50 small">&copy; 2022 topaz</p>
+        </div>
+    </footer>
 </body>
 
 </html>
