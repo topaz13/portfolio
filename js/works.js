@@ -1,19 +1,17 @@
 window.onload = () => {
   console.log("works.js loaded");
   var contents = document.getElementsByClassName("work_content");
-  console.log(contents.length);
   for (let index = 0; index < contents.length; index++) {
     // var a = contents[index];
     // a.innerHTML = "po"
     contents[index].addEventListener("click", () => {
-      console.log("clicked");
-      changeColor(contents[index]);
+      
+    //   changeColor(contents[index]);
     });
   }
 };
 
 var changeColor = (element) => {
-  console.log(element.style.backgroundColor);
   if (element.style.backgroundColor == "red") {
     element.style.backgroundColor = "yellow";
   } else {
@@ -36,7 +34,7 @@ function popupImage() {
     if (!elem) return;
     elem.addEventListener("click", function () {
       popup.classList.toggle("is-show");
-      console.log("clicked");
+      
     });
   }
 
@@ -45,10 +43,10 @@ function popupImage() {
   for (let index = 0; index < s.length; index++) {
     var a = s[index];
     var b = a.getElementsByTagName("img");
-    // console.log(b.length);
+    
     s[index].addEventListener("click", function () {
       popup.classList.toggle("is-show");
-      console.log("clicked");
+      
       ShowPopup(s[index]);
     });
   }
