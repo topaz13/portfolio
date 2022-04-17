@@ -76,8 +76,10 @@
 
 
         <section id="work_game">
-            <h1 class="work_title animate__animated animate__rubberBand animate__infinite" style="text-align: center;">
-                GAME</h1>
+            <h1 class="work_title" style="text-align: center;">
+                <!-- <h1 class="work_title animate__animated animate__rubberBand animate__infinite" style="text-align: center;"> -->
+                GAME
+            </h1>
             <div class="container mt-4">
                 <div class="row gy-3">
                     <div class="card col-lg-3 col-sm-4 work_content">
@@ -110,7 +112,8 @@
                     <div class="card col-lg-3 col-sm-4 work_content">
                         <img src="./images/works/SwitchAndDash.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
-                            <p class="card-text">SwitchAndDash</p>
+                            <p class="card-text">SwitchAndDash
+                            </p>
                             お友達と作ったスマホのゲーム<br>
                             <a href="https://apps.apple.com/jp/app/switchanddash/id1604222793?platform=iphone"
                                 target="_blank">IOSですか？</a>
@@ -177,8 +180,7 @@
             <h1 class="work_title" style="text-align: center;">OTHER</h1>
             <div class="container mt-4">
                 <div class="row gy-3">
-                    <div class="card col-lg-3 col-sm-4">
-
+                    <div class="card col-lg-3 col-sm-4" id="js-show-popup">
                         <img src="./images/logo.png" class="card-img-top img-thumbnail" alt="...">
                         <div class="card-body">
                             <p class="card-text">ポートフォリオ</p>
@@ -186,11 +188,24 @@
                             <a href="index.html" target="_blank">BACK TO HOME</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
     </main>
+
+
+    <!-- FOR POP UP -->
+    <div class="popup" id="js-popup">
+        <div class="popup-inner">
+            <div class="close-btn" id="js-close-btn">
+              
+            </div>
+            <div id="popup_img"></div>
+            <div id="popup_works_title" style="text-align: center; font-size: large; color: blue; background-color: yellowgreen;">テスト</div>
+        </div>
+        <div class="black-background" id="js-black-bg"></div>
+    </div>
+    <!-- FOR POPUP END -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -201,7 +216,7 @@
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- stats.js lib -->
-    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     <script src="./test/js/bg_particle.js"></script>
 
     <footer class="py-4 mt-5 bg-dark text-center work_footer">
