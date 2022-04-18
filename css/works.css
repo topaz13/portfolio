@@ -1,6 +1,7 @@
 .work_title {
     position: relative;
-    z-index: 100;
+    z-index: 2;
+    pointer-events: none;
 }
 
 #work_game {
@@ -11,8 +12,12 @@
     position: relative;
 }
 
+.work_content{
+    transform: scale(0.95);
+}
+
 .work_content:hover {
-    transform: scale(1.1);
+    transform: scale(1);
     z-index: 2;
     background-color: gray;
 }
