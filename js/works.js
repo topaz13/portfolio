@@ -2,8 +2,7 @@ window.onload = () => {
   console.log("works.js loaded");
   var contents = document.getElementsByClassName("work_content");
   for (let index = 0; index < contents.length; index++) {
-    contents[index].addEventListener("click", () => {
-    });
+    contents[index].addEventListener("click", () => {});
   }
 };
 
@@ -84,14 +83,31 @@ var GetDescription = (title) => {
       return "2021年9月のUnity1Weekで作成したゲーム.お題は「ちゅう」で，中央値を選ぶゲームにしました.";
     case "やじりんパーク":
       return "2022年にリリースした株式会社ニコリのオリジナルゲームを元に作成したアプリです.FirebaseのFireStoreを使用し,他のユーザーが作成した問題を解くことができるようにしました.";
-    case "OneCommandOneAction":
-      return "Trijam165に参加した作品で3時間で作成したゲームです.お題は「One Action at one time」でした.";
-    case "DayNightSwitch":
-      return "Trijam164に参加した時のゲームです.お題は「Day/Night cycle」でした.";
     case "BlockCount":
       return "サークル「traP」のゲームジャムで1人で作成したゲームです.\nお題は「超スピード」「勘」「trial」でした.";
+    case "ParalelWorldCollecter":
+      return "";
 
+    // -------------- FOR TRIJAM ---------------------
+    case "DayNightSwitch":
+      return "Trijam164に参加した作品で3時間で作成したゲームです.お題は「Day/Night cycle」でした.";
+    case "OneCommandOneAction":
+      return "Trijam165に参加した作品で3時間で作成したゲームです.お題は「One Action at one time」でした.";
+    case "UpGradeWeaponPlayer":
+      return "Trijam166に参加した作品で3時間で作成したゲームです.お題は「Upgrade your weapons」でした.";
+    case "SelectDirection":
+      return "Trijam167に参加した作品で1時間で作成したゲームです.お題は「Heightened senses」でした.";
+    case "SecurePanda":
+      return "Trijam168に参加した作品で1時間で作成したゲームです.お題は「Don't hurt nobody!」でした.";
+    case "HumanTower":
+      return "Trijam169に参加した作品で3時間で作成したゲームです.お題は「Overpopulation」でした.";
+
+    // ----------- OTHERS ---------------------
+    case "ポートフォリオ":
+      return "このサイトです。particle.jsやBootStrapを使って作りました。";
+    case "ゲーム素材ボタン":
+      return "ゲーム素材として使用できるボタンを100種類製作しました。Boothでの販売を行っています。";
     default:
-      return "ぽぽぽ";
+      return "NOT IMPLEMENTED";
   }
 };
